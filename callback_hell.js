@@ -1,3 +1,5 @@
+// Callback Hell (Pyramid of Doom)
+
 // get cheese in 2 seconds
 
 function getCheese(callback) {
