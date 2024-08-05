@@ -1,47 +1,49 @@
-// Callback Hell (Pyramid of Doom)
+// Example of Callback Hell (Pyramid of Doom)
 
-// get cheese in 2 seconds
-
+// Function to get cheese in 2 seconds
 function getCheese(callback) {
     setTimeout(() => {
-        const cheese = "🧀";   //win + .
+        const cheese = "🧀";   // win + .
         console.log("Here is cheese", cheese);
-        //  when the cheese will be ready, it will pass to callback fun
+        // Pass the cheese to the callback function
         callback(cheese);
-    }, 2000)
+    }, 2000);
 }
 
-// lets create a function to make dough, the fun needs cheese as well
-
+// Function to make dough, requires cheese, and takes 2 seconds
 function makeDough(cheese, callback) {
     setTimeout(() => {
         const dough = cheese + "🍩";
         console.log("Here is the dough", dough);
-        // informing through callback that dough is ready
+        // Pass the dough to the callback function
         callback(dough);
-    }, 2000)
+    }, 2000);
 }
 
-
-// finally lets bake the pizza
+// Function to bake pizza, requires dough, and takes 2 seconds
 function bakePizza(dough, callback) {
     setTimeout(() => {
         const pizza = dough + "🍕";
         console.log("Pizza is ready", pizza);
+        // Pass the pizza to the callback function
         callback(pizza);
-    },2000)
+    }, 2000);
 }
 
-// console.log(getCheese());   //gives undefined
-// lets pass the callback function to getCheese function that will inform us when the cheese will be ready
+// Start the process by getting cheese
+// we are passing arrow function to getCheese function. The function will be called there and we'll get cheese as an argument.
 getCheese((cheese) => {
     console.log("Got the cheese", cheese);
+    // As we already have cheese, we can pass it to make dough
     makeDough(cheese, (dough) => {
         console.log("Got the dough", dough);
+        // Bake pizza after getting dough
         bakePizza(dough, (pizza) => {
             console.log("Pizza is ready", pizza);
-        })
-    })
+        });
+    });
 });
-// here we see multiple nesting of our callback function that makes it uneasy to read. this is called callback hell.
-// To tackle this problem, we'll use promises.
+
+// The above code demonstrates callback hell due to multiple levels of nested callbacks.
+// This nesting makes the code difficult to read and maintain.
+// To solve this problem, we can use promises or async/await.
