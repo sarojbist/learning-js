@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-<style>
-    .parent {
-        display: flex;
-    }
-    .abc {
-        width: 50%;
-        height: 200px;
-        background-color: aqua;
-    }
-</style>
+        <style>
+            body {
+                background-color: #282c34;
+                color: white;
+                font-family: Arial, sans-serif;
+            }
+
+            .input-container {
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                background: none;
+                border: none;
+                border-bottom: 2px solid white;
+                padding: 25px 0 10px 0; 
+                color: white;
+                font-size: 16px;
+                outline: none;
+                transition: border-color 0.3s ease-in-out;
+            }
+
+            input[type="text"]::placeholder {
+                color: #aaaaaa; /* Adjust placeholder color as needed */
+            }
+
+            label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: white;
+                font-size: 12px;
+                pointer-events: none;
+                transition: all 0.3s ease-in-out;
+            }
+        </style>
+
     </head>
     <body>
         <!-- <h2>Hiii</h2>
@@ -22,11 +55,13 @@
         </div>
         <div id="new"></div> 
         <button id="btn">Click Me</button> -->
-
-        <h2 id="h1">This is heading 1</h2>
-        <h2 class="h2">This is heading 2</h2>
-        <h2 class="h3">This is heading 3</h2>
-        <button class="btn">Click Me</button>
-         <script src="callback_hell2.js" ></script>
+        <div class="input-container">
+            <label for="nameInput">Enter your Name</label>
+            <input type="text" id="nameInput" name="name" placeholder="name"  required>
+            
+        </div>
+        
+        
+        <script src="promise-01.js" ></script>
     </body>
 </html>
