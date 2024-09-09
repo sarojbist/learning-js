@@ -6,7 +6,7 @@ function x(y) {
     console.log("I'm x");
     y();
 }
-debugger
+
 x(function y() {
 console.log("I'm y");
 })

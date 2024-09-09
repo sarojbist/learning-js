@@ -8,8 +8,11 @@ const arr = [1,2,3];
 //     console.log(x * 2);
 // })
 
-function double(x) {
-    return x*2;
-}
-const output = arr.map(double);
+// function double(x) {
+//     return x*2;
+// }
+
+const output = arr.map((x) => {
+ return x*2;
+});
 console.log(output);

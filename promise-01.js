@@ -3,10 +3,11 @@ const cart = ["shoes", "pants"];
 const promise = createOrder(cart);
 
 // .then takes a callback function that will be executed later on when promise is resolved
-promise.then(function (orderId) {
-    console.log(orderId);
-})
-    .catch(function (error) {
+promise
+    .then(function (orderId) {
+        console.log(orderId);
+    })
+    .catch((error) => {
         console.log(error);
     })
 
